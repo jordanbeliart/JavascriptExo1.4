@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Javascript Exo 4</title>
+  </head>
+  <body>
+    <form>
+      <label for="lastName">Nom </label>
+      <input type="text" name="lastName" id="lastName" value="" />
+      <label for="firstName">Prénom </label>
+      <input type="text" name="firstName" id="firstName" value="" />
+      <label for="city">Ville </label>
+      <input type="text" name="city" id="city" value="" />
+      <!-- onClick déclenche une action au clic -->
+      <input type="submit" name="send" value="Envoyer" onClick="send" />
+    </form>
+    <script>
+      /*  'document' (ce terme prend en compte tout le fichier html), 'addEventListener('')' ajoute un évènement qui se déclenche selon l'indiquation entre '' , dans le cas présent >>> 'submit'
+      mon 'document' va donc déclencher un évènement dès que je clique (cf onClick dans le <form>) sur le bouton de type 'submit'
+      function send() {} définie la fonction du bouton "send" présent dans le <form> --> je déclare dans les {} les variables que je souhaites voir apparaître après le clic
+      */
+      document.addEventListener('submit', function send() {
+        /* Déclaration des variables 'lastName' 'firstName' et 'city'
+        'getElementById()' --> va chercher un élément selon son 'Id' que l'on précise dans les ()
+        .value précise que les variables vont afficher les éléments saisies dans les trois <input> */
+        var lastName = document.getElementById('lastName').value;
+        var firstName = document.getElementById('firstName').value;
+        var city = document.getElementById('city').value;
+        // alert version tamplate strings
+        alert(`${firstName} ${lastName} de ${city}`);
+      });
+    </script>
+  </body>
+</html>
