@@ -20,6 +20,7 @@
       function send() {} définie la fonction du bouton "send" présent dans le <form> --> je déclare dans les {} les variables que je souhaites voir apparaître après le clic
       */
       //ATTENTION !!! cette version ne fonctionne qu'à condition d'avoir un seul 'submit'
+      ///////////////////////////////////////////////////////////////////////////
       document.addEventListener('submit', function send() {
         /* Déclaration des variables 'lastName' 'firstName' et 'city'
         'getElementById()' --> va chercher un élément selon son 'Id' que l'on précise dans les ()
@@ -30,9 +31,11 @@
         // alert version tamplate strings
         alert(`${firstName} ${lastName} de ${city}`);
       });
+      ///////////////////////////////////////////////////////////////////////////
       //La version qui suit permet de cibler un bouton précis
       var sendButtonVar = document.getElementById('sendButton');
-      sendButtonVar.addEventListener('click', sendInfo());
+      //Attention sur la ligne suivante, ne pas mettre de () après le nom de la fonction sinon ça bug
+      sendButtonVar.addEventListener('click', sendInfo);
       function sendInfo() {
         var lastName = document.getElementById('lastName').value;
         var firstName = document.getElementById('firstName').value;
